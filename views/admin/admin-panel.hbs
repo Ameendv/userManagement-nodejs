@@ -1,0 +1,35 @@
+<body class="bg-light">
+    <div class="container mt-3 mb-3 ">
+        <div class="row d-flex justify-content-center">
+            <div><a href="/admin/add-user" class="btn btn-success align-item-center ">Add new user</a></div>
+        </div>
+    </div>
+    <div>{{#if added}}
+        <script>alert("New user added")</script> {{/if}}
+    </div>
+    <section>
+        <table id="userList" class="display table ">
+            <thead>
+                <tr class="table-warning mt-5">
+                    <th>Username</th>
+                    <th>E-Mail</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{#each data}}
+                <tr>
+                    <td>{{{this.name}}}</td>
+                    <td>{{{this.email}}}</td>
+                    <td>
+                        <a href="/admin/edit-user?id={{this._id}}" class="ms-2 btn btn-primary">Edit</a>
+                        <a href="/admin/delete-user?id={{this._id}}"
+                            onclick="return confirm('Do you want to delete {{this.name}}')" )
+                            class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </section>

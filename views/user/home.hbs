@@ -1,0 +1,40 @@
+
+
+  <section>
+
+    <div>
+      <p class="text text-primary ">
+        {{#if user}}
+
+        {{else}}
+        Please login to explore our offers and details
+
+        {{/if}}
+      </p>
+    </div>
+
+
+  </section>
+
+  <section>
+    <div class="container mt-5 ">
+      <div class="row">
+
+        {{#each products}}
+        <div class="mt-2 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 bg-dark ">
+
+          <img class="card-img-top mt-1 " src="/images/{{this._id}}.webp" alt="Card image cap"
+            style="width: 17rem;height:17rem">
+          <div class="card-body mt-1">
+            <h5 class="card-title text-muted">{{this.place}}</h5>
+            <p class="card-text text-light">{{this.package}}</p>
+            <a href="#" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+        {{/each}}
+
+
+
+      </div>
+    </div>
+  </section>
